@@ -1,0 +1,40 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+
+stages:
+  - stage: "Build_Job" 
+    jobs:
+      - job: A
+        steps:
+          - script: |
+              mkdir prithvi
+            displayName: "Prithvi Directory is getting created"
+
+      - job: B
+        steps:
+          - script: |
+              ls -ltr
+            displayName: "Listing Files"
+  - stage: "Deploy_Job" 
+    jobs:
+      - job: C
+        steps:
+          - script: |
+              mkdir prithvi
+            displayName: "Prithvi Directory is getting created"
+
+      - job: D
+        steps:
+          - script: |
+              ls -ltr
+            displayName: "Listing Files"
+
